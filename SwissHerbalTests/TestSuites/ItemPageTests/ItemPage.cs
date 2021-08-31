@@ -103,10 +103,10 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
             {
                 ItemPageActions itemPageActions = new ItemPageActions(_driver);
-                itemPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/relatonic-max/");
-                itemPageActions.AddToWaitingListButtonClick();
+                itemPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/neuridine/");
+                itemPageActions.AcceptCookiesButtonClick();
                 itemPageActions.ClearPackageOptionButtonClick();
-                itemPageActions.AddThisItemToShoppingBasketButtonClick();
+                itemPageActions.AddThisUnavailableItemToShoppingBasketButtonClick();
                 itemPageActions.AcceptOptionAlertButton();
             }
         }

@@ -85,6 +85,11 @@ namespace SwissHerbalTests.PageObjects.ItemPage
             AddThisItemToShoppingBasketButton.Click();
         }
 
+        public void AddThisUnavailableItemToShoppingBasketButtonClick()
+        {
+            AddThisUnavailableItemToShoppingBasketButton.Click();
+        }
+
         public void CheckAddItemLabelText()
         {
             AddedItemLabel.Displayed.Should().BeTrue();

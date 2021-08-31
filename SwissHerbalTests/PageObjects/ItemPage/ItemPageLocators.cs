@@ -19,6 +19,7 @@ namespace SwissHerbalTests.PageObjects.ItemPage
         public IWebElement SelectPackageOption => _driver.FindElement(By.Id("pa_opakowanie"));
         public IWebElement ClearPackageOptionButton => _driver.FindElement(By.ClassName("reset_variations"));
         public IWebElement AddThisItemToShoppingBasketButton => _driver.FindElement(By.CssSelector("button[class='single_add_to_cart_button button alt']"));
+        public IWebElement AddThisUnavailableItemToShoppingBasketButton => _driver.FindElement(By.CssSelector("button[class='single_add_to_cart_button button alt disabled wc-variation-selection-needed']"));
         public IWebElement AddToWaitingListButton => _driver.FindElement(By.CssSelector("a[class='xoo-wl-btn button btn']"));
         public IWebElement TemporaryMissingLaber => _driver.FindElement(By.CssSelector("span[class='stock-danger']"));
         public IWebElement OutOfStockLabel => _driver.FindElement(By.CssSelector("[class='stock out-of-stock']"));
