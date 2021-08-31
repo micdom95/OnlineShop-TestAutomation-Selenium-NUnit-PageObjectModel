@@ -85,8 +85,17 @@ namespace SwissHerbalTests.PageObjects.ItemPage
             AddThisItemToShoppingBasketButton.Click();
         }
 
+        public void AddThisItemWithoutSelectedOptionToShoppingBasketButtonClick()
+        {
+            AddThisItemWithoutSelectedOptionToShoppingBasketButton.Displayed.Should().BeTrue();
+            AddThisItemWithoutSelectedOptionToShoppingBasketButton.Text.Should().Be("DODAJ DO KOSZYKA");
+            AddThisItemWithoutSelectedOptionToShoppingBasketButton.Click();
+        }
+
         public void AddThisUnavailableItemToShoppingBasketButtonClick()
         {
+            AddThisUnavailableItemToShoppingBasketButton.Displayed.Should().BeTrue();
+            AddThisUnavailableItemToShoppingBasketButton.Text.Should().Be("DODAJ DO KOSZYKA");
             AddThisUnavailableItemToShoppingBasketButton.Click();
         }
 
@@ -96,7 +105,7 @@ namespace SwissHerbalTests.PageObjects.ItemPage
             AddedItemLabel.Text.Should().Contain("został dodany do koszyka.");
         }
 
-        public void CkechOutOfStockItemLabel()
+        public void CheckOutOfStockItemLabel()
         {
             OutOfStockLabel.Displayed.Should().BeTrue();
             OutOfStockLabel.Text.Should().Be("Brak w magazynie");

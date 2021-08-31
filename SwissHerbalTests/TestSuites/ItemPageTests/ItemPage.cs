@@ -60,7 +60,7 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
                 ItemPageActions itemPageActions = new ItemPageActions(_driver);
                 itemPageActions.OpenRandomUnavailableProductPage();
                 itemPageActions.AcceptCookiesButtonClick();
-                itemPageActions.CkechOutOfStockItemLabel();
+                itemPageActions.CheckOutOfStockItemLabel();
             }
         }
 
@@ -75,11 +75,11 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
                 itemPageActions.CheckTemporaryMissingLabel();
                 itemPageActions.SelectPackageFieldClick();
                 itemPageActions.SelectPackageWith30Capsules();
-                itemPageActions.CkechOutOfStockItemLabel();
+                itemPageActions.CheckOutOfStockItemLabel();
                 itemPageActions.CheckTemporaryMissingLabel();
                 itemPageActions.SelectPackageFieldClick();
                 itemPageActions.SelectPackageWith60Capsules();
-                itemPageActions.CkechOutOfStockItemLabel();
+                itemPageActions.CheckOutOfStockItemLabel();
                 itemPageActions.CheckTemporaryMissingLabel();
             }
         }
@@ -106,8 +106,23 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
                 itemPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/neuridine/");
                 itemPageActions.AcceptCookiesButtonClick();
                 itemPageActions.ClearPackageOptionButtonClick();
-                itemPageActions.AddThisUnavailableItemToShoppingBasketButtonClick();
+                itemPageActions.AddThisItemWithoutSelectedOptionToShoppingBasketButtonClick();
                 itemPageActions.AcceptOptionAlertButton();
+            }
+        }
+
+        [Test]
+        public void CheckOutOfStockAlert_AddUnavailableProduct_AlertDisplayedProperly()
+        {
+            using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
+            {
+                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                itemPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/noopeptil/");
+                itemPageActions.AcceptCookiesButtonClick();
+                itemPageActions.SelectPackageWith60Capsules();
+                itemPageActions.CheckOutOfStockItemLabel();
+                itemPageActions.AddThisUnavailableItemToShoppingBasketButtonClick();
+                itemPageActions.AcceptOutOfStockAlertButton();
             }
         }
     }
