@@ -46,7 +46,7 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
                 itemPageActions.OpenRandomAvailableProductPage();
                 itemPageActions.AcceptCookiesButtonClick();
                 itemPageActions.SelectPackageFieldClick();
-                itemPageActions.SelectPackageWithoutChoosenOption();
+                itemPageActions.SelectPackageWith30Capsules();
                 itemPageActions.AddThisItemToShoppingBasketButtonClick();
                 itemPageActions.CheckAddItemLabelText();
             }
@@ -61,7 +61,53 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
                 itemPageActions.OpenRandomUnavailableProductPage();
                 itemPageActions.AcceptCookiesButtonClick();
                 itemPageActions.CkechOutOfStockItemLabel();
-                Thread.Sleep(5000);
+            }
+        }
+
+        [Test]
+        public void CheckAllOptionsAvailability_AllOptionsUnavailable_InformationDisplayedProperly()
+        {
+            using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
+            {
+                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                itemPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/memostim/");
+                itemPageActions.AcceptCookiesButtonClick();
+                itemPageActions.CheckTemporaryMissingLabel();
+                itemPageActions.SelectPackageFieldClick();
+                itemPageActions.SelectPackageWith30Capsules();
+                itemPageActions.CkechOutOfStockItemLabel();
+                itemPageActions.CheckTemporaryMissingLabel();
+                itemPageActions.SelectPackageFieldClick();
+                itemPageActions.SelectPackageWith60Capsules();
+                itemPageActions.CkechOutOfStockItemLabel();
+                itemPageActions.CheckTemporaryMissingLabel();
+            }
+        }
+
+        [Test]
+        public void CheckModalFunctions_UnavailableProduct_ModalDisplayedProperly()
+        {
+            using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
+            {
+                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                itemPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/memostim/");
+                itemPageActions.AcceptCookiesButtonClick();
+                itemPageActions.CheckTemporaryMissingLabel();
+                itemPageActions.AddToWaitingListButtonClick();
+            }
+        }
+
+        [Test]
+        public void CheckOptionAlert_NotSelectedProductOption_AlertDisplayedProperly()
+        {
+            using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
+            {
+                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                itemPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/relatonic-max/");
+                itemPageActions.AddToWaitingListButtonClick();
+                itemPageActions.ClearPackageOptionButtonClick();
+                itemPageActions.AddThisItemToShoppingBasketButtonClick();
+                itemPageActions.AcceptOptionAlertButton();
             }
         }
     }

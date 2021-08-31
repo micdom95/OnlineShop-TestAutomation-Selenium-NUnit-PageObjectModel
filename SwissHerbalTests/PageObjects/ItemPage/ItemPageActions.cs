@@ -16,6 +16,12 @@ namespace SwissHerbalTests.PageObjects.ItemPage
             _driver = driver;
         }
 
+        public void OpenGivenPage(string url)
+        {
+            _driver.Navigate().GoToUrl(url);
+            _driver.Url.Should().Be(url);
+        }
+
         public void OpenRandomAvailableProductPage()
         {
             _driver.Navigate().GoToUrl("https://pl.swissherbal.eu/sklep/noopeptil/");
@@ -91,10 +97,15 @@ namespace SwissHerbalTests.PageObjects.ItemPage
             OutOfStockLabel.Text.Should().Be("Brak w magazynie");
         }
 
+        public void CheckTemporaryMissingLabel()
+        {
+            TemporaryMissingLaber.Text.Should().Be("Chwilowo brak");
+        }
+
         public void AddToWaitingListButtonClick()
         {
             AddToWaitingListButton.Displayed.Should().Be(true);
-            AddThisItemToShoppingBasketButton.Click();
+            AddToWaitingListButton.Click();
             AddToWaitingListModal.Displayed.Should().Be(true);
         }
 
@@ -102,6 +113,12 @@ namespace SwissHerbalTests.PageObjects.ItemPage
         {
             AddToWaitingListModalEmailTextbox.Click();
             AddToWaitingListModalEmailTextbox.SendKeys(email);
+        }
+
+        public void CheckModalEmptyEmailErrorLabel()
+        {
+            ModalEmptyEmailErrorLabel.Displayed.Should().BeTrue();
+            ModalEmptyEmailErrorLabel.Text.Should().Be("Email address cannot be empty.");
         }
 
         public void AddToWaitingListModalNotificationButtonClick()

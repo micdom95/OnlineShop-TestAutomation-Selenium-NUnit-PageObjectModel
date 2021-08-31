@@ -18,6 +18,12 @@ namespace SwissHerbalTests.PageObjects.MainPage
             _driver = driver;
         }
 
+        public void OpenGivenPage(string url)
+        {
+            _driver.Navigate().GoToUrl(url);
+            _driver.Url.Should().Be(url);
+        }
+
         public void OpenMainPage()
         {
             string mainPageUrl = "https://pl.swissherbal.eu/";
