@@ -137,6 +137,20 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
                 itemPageActions.AcceptOutOfStockAlertButton();
             }
         }
+
+        [Test]
+        public void CheckOptionAlert_AddItemWithoutChoosenOption_AlertDisplayedProperly()
+        {
+            using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
+            {
+                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                itemPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/noopeptil/");
+                itemPageActions.AcceptCookiesButtonClick();
+                itemPageActions.SelectPackageWithoutChoosenOption();
+                itemPageActions.AddThisItemWithoutSelectedOptionToShoppingBasketButtonClick();
+                itemPageActions.AcceptOptionAlertButton();
+            }
+        }
     }
  
 }
