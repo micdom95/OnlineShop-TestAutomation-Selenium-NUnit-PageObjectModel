@@ -49,6 +49,7 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
         [TestCase("https://pl.swissherbal.eu/sklep/noopeptil-max/")]
         [TestCase("https://pl.swissherbal.eu/sklep/noopept/")]
         [TestCase("https://pl.swissherbal.eu/sklep/immuno-box-mushroom-synergy/")]
+        [Category("Smoke test")]
         public void OpenGivenPage_PageOpenedProperly_CorrectUrlAddress(string url)
         {
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
@@ -105,13 +106,14 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
         }
 
         [Test]
-        public void DisplayedInStockProductCounter_ProductsCountedProperly()
+        [TestCase(20)]
+        public void DisplayedInStockProductCounter_ProductsCountedProperly(int checkValue)
         {
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 mainPageActions.OpenMainPage();
-                mainPageActions.FindInStockProductsOnPage();
+                mainPageActions.FindInStockProductsOnPage(checkValue);
             }
         }
 

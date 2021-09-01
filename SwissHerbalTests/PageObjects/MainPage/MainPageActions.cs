@@ -34,6 +34,7 @@ namespace SwissHerbalTests.PageObjects.MainPage
         public void OpenMyAccountPage()
         {
             OpenMainPage();
+            MyAccountButton.Displayed.Should().BeTrue();
             MyAccountButton.Click();
             _driver.Url.Should().Be("https://pl.swissherbal.eu/moje-konto/");
         }
@@ -41,6 +42,7 @@ namespace SwissHerbalTests.PageObjects.MainPage
         public void OpenBasketPage()
         {
             OpenMainPage();
+            BasketButton.Displayed.Should().BeTrue();
             BasketButton.Click();
             _driver.Url.Should().Be("https://pl.swissherbal.eu/koszyk/");
         }
@@ -48,12 +50,14 @@ namespace SwissHerbalTests.PageObjects.MainPage
         public void OpenOrderPage()
         {
             OpenMainPage();
+            OrderButton.Displayed.Should().BeTrue();
             OrderButton.Click();
             _driver.Url.Should().Be("https://pl.swissherbal.eu/zamowienie/");
         }
 
         public void AcceptCookieButtonClick()
         {
+            AcceptCookieButton.Displayed.Should().BeTrue();
             AcceptCookieButton.Click();
         }
 
@@ -68,6 +72,7 @@ namespace SwissHerbalTests.PageObjects.MainPage
 
         public void SearchIconButtonClick()
         {
+            SearchIconButton.Displayed.Should().BeTrue();
             SearchIconButton.Click();
         }
         public void SearchTextboxInput(string text)
@@ -86,10 +91,10 @@ namespace SwissHerbalTests.PageObjects.MainPage
             ProductsTable.Count().Should().Be(20);
         }
 
-        public void FindInStockProductsOnPage()
+        public void FindInStockProductsOnPage(int checkValue)
         {
             //TODO - SHOW 20 PRODUCTS
-            ProductsTable.Select(p => p.FindElement(By.XPath("//span[@class='in-stock']"))).ToList().Count().Should().Be(17);
+            ProductsTable.Select(p => p.FindElement(By.XPath("//span[@class='in-stock']"))).ToList().Count().Should().Be(checkValue);
         }
 
         public void SelectOutOfStockProduct()

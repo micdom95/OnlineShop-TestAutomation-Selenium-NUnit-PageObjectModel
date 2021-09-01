@@ -34,12 +34,13 @@ namespace SwissHerbalTests.PageObjects.ItemPage
 
         public void AcceptCookiesButtonClick()
         {
-            //AcceptCookieButton.Text.Should().Be("Rozumiem. Zamknij.");
+            AcceptCookieButton.Text.Should().Be("Rozumiem. Zamknij.");
             AcceptCookieButton.Click();
         }
 
         public void ItemCounterFieldOperations(string value)
         {
+            ItemCounterField.Displayed.Should().BeTrue();
             ItemCounterField.Clear();
             ItemCounterField.SendKeys(value);
             //ItemCounterField.Text.Should().Be(value);
@@ -60,7 +61,7 @@ namespace SwissHerbalTests.PageObjects.ItemPage
         {
             SelectPackageOption.Click();
             SelectElement dropdown = new SelectElement(SelectPackageField);
-            dropdown.SelectByText("60 kapsułek");
+            dropdown.SelectByValue("");
             //SelectPackageField.Text.Should().Be("WYBIERZ OPCJĘ");
         }
 

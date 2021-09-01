@@ -38,6 +38,18 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
         }
 
         [Test]
+        public void SelectPackageOption_WithoutChoosenPackage_OptionSelectedPackage()
+        {
+            using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
+            {
+                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                itemPageActions.OpenRandomAvailableProductPage();
+                itemPageActions.SelectPackageFieldClick();
+                itemPageActions.SelectPackageWithoutChoosenOption();
+            }
+        }
+
+        [Test]
         public void AddItemToBasket_ItemWith30Capsules_ItemAddedProperly()
         {
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
@@ -70,7 +82,7 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
             {
                 ItemPageActions itemPageActions = new ItemPageActions(_driver);
-                itemPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/memostim/");
+                itemPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/adrafinil-dlpa/");
                 itemPageActions.AcceptCookiesButtonClick();
                 itemPageActions.CheckTemporaryMissingLabel();
                 itemPageActions.SelectPackageFieldClick();
