@@ -136,6 +136,12 @@ namespace SwissHerbalTests.PageObjects.ItemPage
             ModalEmptyEmailErrorLabel.Text.Should().Be("Email address cannot be empty.");
         }
 
+        public void CheckModalIncorrectEmailErrorLabel()
+        {
+            ModalIncorrectEmailErrorLabel.Displayed.Should().BeTrue();
+            ModalIncorrectEmailErrorLabel.Text.Should().Be("Please enter valid email address.");
+        }
+
         public void AddToWaitingListModalNotificationButtonClick()
         {
             AddToWaitingListModalNotificationButton.Click();
