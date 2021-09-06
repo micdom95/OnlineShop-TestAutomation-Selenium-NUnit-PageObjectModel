@@ -1,8 +1,10 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using SwissHerbalTests.Common.Enums;
 using SwissHerbalTests.Common.Setup;
 using SwissHerbalTests.PageObjects;
+using SwissHerbalTests.PageObjects.ItemPage;
 using SwissHerbalTests.PageObjects.MainPage;
 using System;
 using System.Collections.Generic;
@@ -56,6 +58,17 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 mainPageActions.OpenGivenPage(url);
+            }
+        }
+        
+        [Test]
+        public void CheckBasketItemCounter_ItemCounterShouldBe0_CountedProperly()
+        {
+            using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
+            {
+                MainPageActions mainPageActions = new MainPageActions(_driver);
+                mainPageActions.OpenMainPage();
+                mainPageActions.CheckBasketItemCounter();
             }
         }
 
@@ -123,11 +136,33 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
+                ItemPageActions itemPageActions = new ItemPageActions(_driver);
                 mainPageActions.OpenMainPage();
                 mainPageActions.AcceptCookieButtonClick();
                 mainPageActions.SelectInStockProduct();
                 mainPageActions.AddProductButtonClick();
-                Thread.Sleep(5000);
+                itemPageActions.AddItemButtonClick();
+                mainPageActions.CheckBasketItemCounter();
+            }
+        }
+
+        [Test]
+        public void CheckOrderPage_AddItemToBasket_CorrectUrlAddress()
+        {
+            using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
+            {
+                MainPageActions mainPageActions = new MainPageActions(_driver);
+                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                mainPageActions.OpenMainPage();
+                mainPageActions.AcceptCookieButtonClick();
+                mainPageActions.SelectInStockProduct();
+                mainPageActions.AddProductButtonClick();
+                itemPageActions.SelectPackageWith60Capsules();
+                itemPageActions.AddItemButtonClick();
+                itemPageActions.CheckAddItemLabelText();
+                mainPageActions.CheckBasketItemCounter();
+                mainPageActions.OpenOrderPage();
+                _driver.Url.Should().Be("https://pl.swissherbal.eu/zamowienie/");
             }
         }
 
@@ -141,7 +176,6 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
                 mainPageActions.AcceptCookieButtonClick();
                 mainPageActions.SelectOutOfStockProduct();
                 mainPageActions.AddProductButtonClick();
-                Thread.Sleep(5000);
             }
         }
 

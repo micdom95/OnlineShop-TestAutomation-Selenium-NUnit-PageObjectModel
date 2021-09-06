@@ -61,6 +61,12 @@ namespace SwissHerbalTests.PageObjects.MainPage
             AcceptCookieButton.Click();
         }
 
+        public void CheckBasketItemCounter()
+        {
+            string counter = BasketItemCounter.Text.ToString();
+            BasketItemCounter.Text.Should().Be(counter);
+        }
+
         public void SuplementsTabHover()
         {
             Actions actions = new Actions(_driver);
@@ -79,6 +85,12 @@ namespace SwissHerbalTests.PageObjects.MainPage
         {
             WaitForAction.WaitUntilElementVisible(_driver, By.Name("s"));
             SearchTextbox.SendKeys(text);
+            CheckSearchResultLabel(text);
+        }
+
+        public void CheckSearchResultLabel(string text)
+        {
+            SearchResultLabel.Text.Should().Contain(text);
         }
 
         public void AddProductButtonClick()
