@@ -79,25 +79,25 @@ namespace SwissHerbalTests.PageObjects.ItemPage
             dropdown.SelectByValue("60-kapsulek");
         }
 
-        public void AddThisItemToShoppingBasketButtonClick()
+        public void AddItemButtonClick()
         {
-            AddThisItemToShoppingBasketButton.Displayed.Should().BeTrue();
-            AddThisItemToShoppingBasketButton.Text.Should().Be("DODAJ DO KOSZYKA");
-            AddThisItemToShoppingBasketButton.Click();
+            AddItemButton.Displayed.Should().BeTrue();
+            AddItemButton.Text.Should().Be("DODAJ DO KOSZYKA");
+            AddItemButton.Click();
         }
 
-        public void AddThisItemWithoutSelectedOptionToShoppingBasketButtonClick()
+        public void AddItemWithoutSelectedOptionButtonClick()
         {
-            AddThisItemWithoutSelectedOptionToShoppingBasketButton.Displayed.Should().BeTrue();
-            AddThisItemWithoutSelectedOptionToShoppingBasketButton.Text.Should().Be("DODAJ DO KOSZYKA");
-            AddThisItemWithoutSelectedOptionToShoppingBasketButton.Click();
+            AddItemWithoutSelectedOptionButton.Displayed.Should().BeTrue();
+            AddItemWithoutSelectedOptionButton.Text.Should().Be("DODAJ DO KOSZYKA");
+            AddItemWithoutSelectedOptionButton.Click();
         }
 
-        public void AddThisUnavailableItemToShoppingBasketButtonClick()
+        public void AddUnavailableItemButtonClick()
         {
-            AddThisUnavailableItemToShoppingBasketButton.Displayed.Should().BeTrue();
-            AddThisUnavailableItemToShoppingBasketButton.Text.Should().Be("DODAJ DO KOSZYKA");
-            AddThisUnavailableItemToShoppingBasketButton.Click();
+            AddUnavailableItemButton.Displayed.Should().BeTrue();
+            AddUnavailableItemButton.Text.Should().Be("DODAJ DO KOSZYKA");
+            AddUnavailableItemButton.Click();
         }
 
         public void CheckAddItemLabelText()

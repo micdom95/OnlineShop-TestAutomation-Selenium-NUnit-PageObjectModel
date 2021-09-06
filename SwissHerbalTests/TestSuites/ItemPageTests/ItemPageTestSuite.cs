@@ -11,7 +11,7 @@ using System.Threading;
 namespace SwissHerbalTests.TestSuites.ItemPageTests
 {
     [TestFixture]
-    public class ItemPage
+    public class ItemPageTestSuite
     {
         [Test]
         public void OpenItemPage_RandomItemPage_PageOpenedProperly()
@@ -59,7 +59,7 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
                 itemPageActions.AcceptCookiesButtonClick();
                 itemPageActions.SelectPackageFieldClick();
                 itemPageActions.SelectPackageWith30Capsules();
-                itemPageActions.AddThisItemToShoppingBasketButtonClick();
+                itemPageActions.AddItemButtonClick();
                 itemPageActions.CheckAddItemLabelText();
             }
         }
@@ -118,7 +118,7 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
                 itemPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/neuridine/");
                 itemPageActions.AcceptCookiesButtonClick();
                 itemPageActions.ClearPackageOptionButtonClick();
-                itemPageActions.AddThisItemWithoutSelectedOptionToShoppingBasketButtonClick();
+                itemPageActions.AddItemWithoutSelectedOptionButtonClick();
                 itemPageActions.AcceptOptionAlertButton();
             }
         }
@@ -133,7 +133,7 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
                 itemPageActions.AcceptCookiesButtonClick();
                 itemPageActions.SelectPackageWith60Capsules();
                 itemPageActions.CheckOutOfStockItemLabel();
-                itemPageActions.AddThisUnavailableItemToShoppingBasketButtonClick();
+                itemPageActions.AddUnavailableItemButtonClick();
                 itemPageActions.AcceptOutOfStockAlertButton();
             }
         }
@@ -147,7 +147,7 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
                 itemPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/noopeptil/");
                 itemPageActions.AcceptCookiesButtonClick();
                 itemPageActions.SelectPackageWithoutChoosenOption();
-                itemPageActions.AddThisItemWithoutSelectedOptionToShoppingBasketButtonClick();
+                itemPageActions.AddItemWithoutSelectedOptionButtonClick();
                 itemPageActions.AcceptOptionAlertButton();
             }
         }
