@@ -91,7 +91,7 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 mainPageActions.OpenMainPage();
                 mainPageActions.SearchIconButtonClick();
-                mainPageActions.SearchTextboxInput("ABC");
+                mainPageActions.SearchEngineButtonClick("");
                 Thread.Sleep(5000);
             }
         }
@@ -114,7 +114,7 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 mainPageActions.OpenMainPage();
-                mainPageActions.FindtAllProductsOnPage();
+                mainPageActions.FindAllProductsOnPage();
             }
         }
 

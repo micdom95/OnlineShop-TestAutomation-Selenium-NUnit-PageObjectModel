@@ -63,7 +63,7 @@ namespace SwissHerbalTests.PageObjects.MainPage
 
         public void CheckBasketItemCounter()
         {
-            string counter = BasketItemCounter.Text.ToString();
+            string counter = BasketItemCounter.Text;
             BasketItemCounter.Text.Should().Be(counter);
         }
 
@@ -83,9 +83,13 @@ namespace SwissHerbalTests.PageObjects.MainPage
         }
         public void SearchTextboxInput(string text)
         {
-            WaitForAction.WaitUntilElementVisible(_driver, By.Name("s"));
+            SearchTextbox.Clear();
             SearchTextbox.SendKeys(text);
-            CheckSearchResultLabel(text);
+        }
+
+        public void SearchEngineButtonClick(string text)
+        {
+            SearchEngineButton.Click();
         }
 
         public void CheckSearchResultLabel(string text)
@@ -98,19 +102,20 @@ namespace SwissHerbalTests.PageObjects.MainPage
             AddProductButton.Click();
         }
 
-        public void FindtAllProductsOnPage()
+        public void FindAllProductsOnPage()
         {
             ProductsTable.Count().Should().Be(20);
         }
 
         public void FindInStockProductsOnPage(int checkValue)
         {
-            //TODO - SHOW 20 PRODUCTS
+            //TODO - SHOW ALL PRODUCTS ON PAGE
             ProductsTable.Select(p => p.FindElement(By.XPath("//span[@class='in-stock']"))).ToList().Count().Should().Be(checkValue);
         }
 
         public void SelectOutOfStockProduct()
         {
+            //TODO - SELECT RANDOM FIRST OR DEFAULT AND OUT OF STOCK TOO
             ProductsTable.Select(p => p.FindElement(By.XPath("//span[@class='out-of-stock']"))).FirstOrDefault();
         }
 

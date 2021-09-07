@@ -21,6 +21,7 @@ namespace SwissHerbalTests.PageObjects.MainPage
         public IWebElement SuplementsTabSubMenu => _driver.FindElement(By.LinkText("ENERGIA"));
         public IWebElement SearchIconButton => _driver.FindElement(By.CssSelector("[class='glyphicon  glyphicon-search  glyphicon-search--nav']"));
         public IWebElement SearchTextbox => _driver.FindElement(By.Name("s"));
+        public IWebElement SearchEngineButton => _driver.FindElement(By.XPath("//span[@class='glyphicon  glyphicon-search']"));
         public IWebElement SearchResultLabel => _driver.FindElement(By.XPath("//span[@class='banners-text']"));
         public IList<IWebElement> ProductsTable => _driver.FindElement(By.XPath("//div[@class='products__single']/figure/a")).FindElements(By.XPath("//div[@class='product-overlay__stock']"));
         public IWebElement AddProductButton => _driver.FindElement(By.CssSelector("[class='product-overlay__cart add_to_cart_button product_type_variable']"));
