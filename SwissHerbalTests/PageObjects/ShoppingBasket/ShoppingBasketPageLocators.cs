@@ -5,11 +5,11 @@ using System.Text;
 
 namespace SwissHerbalTests.PageObjects.ShoppingBasket
 {
-    public class ShoppingBasketLocators
+    public class ShoppingBasketPageLocators
     {
         private IWebDriver _driver;
 
-        public ShoppingBasketLocators(IWebDriver driver)
+        public ShoppingBasketPageLocators(IWebDriver driver)
         {
             _driver = driver;
         }

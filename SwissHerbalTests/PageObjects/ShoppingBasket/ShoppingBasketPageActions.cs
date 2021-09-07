@@ -6,13 +6,19 @@ using System.Text;
 
 namespace SwissHerbalTests.PageObjects.ShoppingBasket
 {
-    public class ShoppingBasketActions : ShoppingBasketLocators
+    public class ShoppingBasketPageActions : ShoppingBasketPageLocators
     {
         private IWebDriver _driver;
 
-        public ShoppingBasketActions(IWebDriver driver) : base(driver)
+        public ShoppingBasketPageActions(IWebDriver driver) : base(driver)
         {
             _driver = driver;
+        }
+
+        public void OpenShoppingBasketPage()
+        {
+            _driver.Navigate().GoToUrl("https://pl.swissherbal.eu/koszyk/");
+            _driver.Url.Should().Be("https://pl.swissherbal.eu/koszyk/");
         }
 
         public void CheckEmptyBasketLabel()
