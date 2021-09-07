@@ -13,5 +13,8 @@ namespace SwissHerbalTests.PageObjects.ShoppingBasket
         {
             _driver = driver;
         }
+
+        public IWebElement EmptyBasketLabel => _driver.FindElement(By.XPath("//p[@class='cart-empty woocommerce-info']"));
+        public IWebElement BackwardToShopButton => _driver.FindElement(By.XPath("//a[@class='button wc-backward']"));
     }
 }
