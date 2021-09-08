@@ -33,7 +33,6 @@ namespace SwissHerbalTests.PageObjects.MainPage
 
         public void OpenMyAccountPage()
         {
-            OpenMainPage();
             MyAccountButton.Displayed.Should().BeTrue();
             MyAccountButton.Click();
             _driver.Url.Should().Be("https://pl.swissherbal.eu/moje-konto/");
@@ -41,7 +40,6 @@ namespace SwissHerbalTests.PageObjects.MainPage
 
         public void OpenBasketPage()
         {
-            OpenMainPage();
             BasketButton.Displayed.Should().BeTrue();
             BasketButton.Click();
             _driver.Url.Should().Be("https://pl.swissherbal.eu/koszyk/");
@@ -49,10 +47,8 @@ namespace SwissHerbalTests.PageObjects.MainPage
 
         public void OpenOrderPage()
         {
-            OpenMainPage();
             OrderButton.Displayed.Should().BeTrue();
             OrderButton.Click();
-            _driver.Url.Should().Be("https://pl.swissherbal.eu/zamowienie/");
         }
 
         public void AcceptCookieButtonClick()

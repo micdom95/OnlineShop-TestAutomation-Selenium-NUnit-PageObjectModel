@@ -48,6 +48,20 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
             }
         }
 
+        [Test]
+        [Category("Smoke test")]
+        public void CheckOrderPage_WithoutItemInBasket_BasketPageOpened()
+        {
+            using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
+            {
+                MainPageActions mainPageActions = new MainPageActions(_driver);
+                mainPageActions.OpenMainPage();
+                mainPageActions.OpenOrderPage();
+                _driver.Url.Should().Be("https://pl.swissherbal.eu/koszyk/");
+
+            }
+        }
+
         [TestCase("https://pl.swissherbal.eu/sklep/noopeptil-max/")]
         [TestCase("https://pl.swissherbal.eu/sklep/noopept/")]
         [TestCase("https://pl.swissherbal.eu/sklep/immuno-box-mushroom-synergy/")]
@@ -62,7 +76,7 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
         }
         
         [Test]
-        public void CheckBasketItemCounter_ItemCounterShouldBe0_CountedProperly()
+        public void CheckBasketItemCounter_ItemCounterShouldBeZero_CountedProperly()
         {
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
             {

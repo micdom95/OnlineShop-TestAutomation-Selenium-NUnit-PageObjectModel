@@ -2,6 +2,8 @@
 using OpenQA.Selenium;
 using SwissHerbalTests.Common.Enums;
 using SwissHerbalTests.Common.Setup;
+using SwissHerbalTests.PageObjects.ItemPage;
+using SwissHerbalTests.PageObjects.MainPage;
 using SwissHerbalTests.PageObjects.ShoppingBasket;
 using System;
 using System.Collections.Generic;
@@ -40,6 +42,49 @@ namespace SwissHerbalTests.TestSuites.ShoppingBasketTests
                 ShoppingBasketPageActions shoppingBasketPageActions = new ShoppingBasketPageActions(_driver);
                 shoppingBasketPageActions.OpenShoppingBasketPage();
                 shoppingBasketPageActions.BackwardToShopButtonClick();
+            }
+        }
+
+        [Test]
+        public void CheckEmptyCouponCode_WithoutTypedCode_LabelDisplayedProperly()
+        {
+            using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
+            {
+                MainPageActions mainPageActions = new MainPageActions(_driver);
+                mainPageActions.OpenMainPage();
+                mainPageActions.AcceptCookieButtonClick();
+                mainPageActions.SelectInStockProduct();
+                mainPageActions.AddProductButtonClick();
+                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                itemPageActions.AddItemButtonClick();
+                itemPageActions.CheckAddItemLabelText();
+                itemPageActions.GoToBasketPageButtonClick();
+                ShoppingBasketPageActions shoppingBasketPageActions = new ShoppingBasketPageActions(_driver);
+                shoppingBasketPageActions.CouponCodeTextboxInput("");
+                shoppingBasketPageActions.RealiseCouponButtonClick();
+                shoppingBasketPageActions.CheckEmptyCouponCodeLabel();
+            }
+        }
+
+        [Test]
+        [TestCase("InvalidCode")]
+        public void CheckInvalidCouponCode_WithTypedCode_LabelDisplayedProperly(string couponCode)
+        {
+            using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
+            {
+                MainPageActions mainPageActions = new MainPageActions(_driver);
+                mainPageActions.OpenMainPage();
+                mainPageActions.AcceptCookieButtonClick();
+                mainPageActions.SelectInStockProduct();
+                mainPageActions.AddProductButtonClick();
+                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                itemPageActions.AddItemButtonClick();
+                itemPageActions.CheckAddItemLabelText();
+                itemPageActions.GoToBasketPageButtonClick();
+                ShoppingBasketPageActions shoppingBasketPageActions = new ShoppingBasketPageActions(_driver);
+                shoppingBasketPageActions.CouponCodeTextboxInput(couponCode);
+                shoppingBasketPageActions.RealiseCouponButtonClick();
+                shoppingBasketPageActions.CheckInvalidCouponCodeLabel();
             }
         }
     }

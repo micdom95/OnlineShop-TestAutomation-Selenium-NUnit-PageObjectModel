@@ -117,6 +117,12 @@ namespace SwissHerbalTests.PageObjects.ItemPage
             TemporaryMissingLaber.Text.Should().Be("Chwilowo brak");
         }
 
+        public void GoToBasketPageButtonClick()
+        {
+            GoToBasketPageButton.Displayed.Should().BeTrue();
+            GoToBasketPageButton.Click();
+        }
+
         public void AddToWaitingListButtonClick()
         {
             AddToWaitingListButton.Displayed.Should().Be(true);

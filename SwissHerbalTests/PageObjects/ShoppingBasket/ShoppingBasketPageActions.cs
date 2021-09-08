@@ -33,5 +33,37 @@ namespace SwissHerbalTests.PageObjects.ShoppingBasket
             BackwardToShopButton.Click();
             _driver.Url.Should().Be("https://pl.swissherbal.eu/sklep/");
         }
+
+        public void GoToOrderPageButtonClick()
+        {
+            GoToOrderPageButton.Displayed.Should().BeTrue();
+            GoToOrderPageButton.Click();
+            _driver.Url.Should().Be("https://pl.swissherbal.eu/zamowienie/");
+        }
+
+        public void CheckEmptyCouponCodeLabel()
+        {
+            EmptyCouponCodeLabel.Displayed.Should().BeTrue();
+            EmptyCouponCodeLabel.Text.Should().Contain("Proszę wpisać kod kuponu.");
+        }
+
+        public void CheckInvalidCouponCodeLabel()
+        {
+            InvalidCouponCodeLabel.Displayed.Should().BeTrue();
+            InvalidCouponCodeLabel.Text.Should().Contain("nie istnieje!");
+        }
+
+        public void CouponCodeTextboxInput(string couponCode)
+        {
+            CouponCodeTextbox.Displayed.Should().BeTrue();
+            CouponCodeTextbox.Click();
+            CouponCodeTextbox.SendKeys(couponCode);
+        }
+
+        public void RealiseCouponButtonClick()
+        {
+            RealiseCouponButton.Displayed.Should().BeTrue();
+            RealiseCouponButton.Click();
+        }
     }
 }
