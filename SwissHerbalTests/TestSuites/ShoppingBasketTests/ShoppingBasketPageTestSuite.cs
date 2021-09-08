@@ -80,6 +80,7 @@ namespace SwissHerbalTests.TestSuites.ShoppingBasketTests
                 ItemPageActions itemPageActions = new ItemPageActions(_driver);
                 itemPageActions.AddItemButtonClick();
                 itemPageActions.CheckAddItemLabelText();
+                mainPageActions.CheckBasketItemCounter();
                 itemPageActions.GoToBasketPageButtonClick();
                 ShoppingBasketPageActions shoppingBasketPageActions = new ShoppingBasketPageActions(_driver);
                 shoppingBasketPageActions.CouponCodeTextboxInput(couponCode);
