@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using OpenQA.Selenium;
+using SwissHerbalTests.Common.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -43,12 +44,14 @@ namespace SwissHerbalTests.PageObjects.ShoppingBasket
 
         public void CheckEmptyCouponCodeLabel()
         {
+            WaitForAction.WaitUntilElementExists(_driver, (By.XPath("//ul[@class='woocommerce-error']")));
             EmptyCouponCodeLabel.Displayed.Should().BeTrue();
             EmptyCouponCodeLabel.Text.Should().Contain("Proszę wpisać kod kuponu.");
         }
 
         public void CheckInvalidCouponCodeLabel()
         {
+            WaitForAction.WaitUntilElementExists(_driver, (By.XPath("//ul[@class='woocommerce-error']")));
             InvalidCouponCodeLabel.Displayed.Should().BeTrue();
             InvalidCouponCodeLabel.Text.Should().Contain("nie istnieje!");
         }
