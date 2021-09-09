@@ -33,6 +33,7 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
+                mainPageActions.OpenMainPage();
                 mainPageActions.OpenMyAccountPage();
             }
         }
@@ -44,6 +45,7 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
+                mainPageActions.OpenMainPage();
                 mainPageActions.OpenBasketPage();
             }
         }

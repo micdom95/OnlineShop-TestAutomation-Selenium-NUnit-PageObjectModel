@@ -59,6 +59,7 @@ namespace SwissHerbalTests.PageObjects.ShoppingBasket
 
         public void CheckDeletedProductLabel()
         {
+            WaitForAction.WaitUntilElementVisible(_driver, By.XPath("//div[@class='woocommerce-message']"));
             DeletedProductLabel.Displayed.Should().BeTrue();
             DeletedProductLabel.Text.Should().Contain("Usunięto:");
         }
