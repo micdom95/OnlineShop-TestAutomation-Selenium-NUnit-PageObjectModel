@@ -24,6 +24,7 @@ namespace SwissHerbalTests.PageObjects.ShoppingBasket
 
         public void CheckEmptyBasketLabel()
         {
+            WaitForAction.WaitUntilElementVisible(_driver, By.XPath("//p[@class='cart-empty woocommerce-info']"));
             EmptyBasketLabel.Displayed.Should().BeTrue();
             EmptyBasketLabel.Text.Should().Be("Twój koszyk jest pusty.");
         }
@@ -67,6 +68,11 @@ namespace SwissHerbalTests.PageObjects.ShoppingBasket
         {
             RealiseCouponButton.Displayed.Should().BeTrue();
             RealiseCouponButton.Click();
+        }
+
+        public void DeleteSingleItemFromTable(int index)
+        {
+            AddedItemTable[index].FindElement(By.XPath("//a[@class='remove']")).Click();
         }
     }
 }

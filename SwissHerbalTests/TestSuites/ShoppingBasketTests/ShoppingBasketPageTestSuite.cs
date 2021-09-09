@@ -88,5 +88,26 @@ namespace SwissHerbalTests.TestSuites.ShoppingBasketTests
                 shoppingBasketPageActions.CheckInvalidCouponCodeLabel();
             }
         }
+
+        [Test]
+        [TestCase(0)]
+        public void DeleteProductFromTable_OneProductAddedToShoppingBasket_ProductDeletedProperly(int index)
+        {
+            using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
+            {
+                MainPageActions mainPageActions = new MainPageActions(_driver);
+                mainPageActions.OpenMainPage();
+                mainPageActions.AcceptCookieButtonClick();
+                mainPageActions.SelectInStockProduct();
+                mainPageActions.AddProductButtonClick();
+                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                itemPageActions.AddItemButtonClick();
+                itemPageActions.CheckAddItemLabelText();
+                itemPageActions.GoToBasketPageButtonClick();
+                ShoppingBasketPageActions shoppingBasketPageActions = new ShoppingBasketPageActions(_driver);
+                shoppingBasketPageActions.DeleteItemFromTable(0);
+                shoppingBasketPageActions.CheckEmptyBasketLabel();
+            }
+        }
     }
 }
