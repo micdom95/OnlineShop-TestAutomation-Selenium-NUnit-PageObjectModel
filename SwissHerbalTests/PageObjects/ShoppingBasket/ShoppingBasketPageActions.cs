@@ -57,6 +57,12 @@ namespace SwissHerbalTests.PageObjects.ShoppingBasket
             InvalidCouponCodeLabel.Text.Should().Contain("nie istnieje!");
         }
 
+        public void CheckDeletedProductLabel()
+        {
+            DeletedProductLabel.Displayed.Should().BeTrue();
+            DeletedProductLabel.Text.Should().Contain("Usunięto:");
+        }
+
         public void CouponCodeTextboxInput(string couponCode)
         {
             CouponCodeTextbox.Displayed.Should().BeTrue();
@@ -73,6 +79,16 @@ namespace SwissHerbalTests.PageObjects.ShoppingBasket
         public void DeleteSingleItemFromTable(int index)
         {
             AddedItemTable[index].FindElement(By.XPath("//a[@class='remove']")).Click();
+            CheckDeletedProductLabel();
+        }
+
+        public void DeleteAllItemsFromTable()
+        {
+            foreach (var product in AddedItemTable)
+            {
+                product.FindElement(By.XPath("//a[@class='remove']")).Click();
+            }
+            CheckDeletedProductLabel();
         }
     }
 }
