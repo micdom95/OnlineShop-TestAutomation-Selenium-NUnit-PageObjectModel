@@ -105,8 +105,33 @@ namespace SwissHerbalTests.TestSuites.ShoppingBasketTests
                 itemPageActions.CheckAddItemLabelText();
                 itemPageActions.GoToBasketPageButtonClick();
                 ShoppingBasketPageActions shoppingBasketPageActions = new ShoppingBasketPageActions(_driver);
-                shoppingBasketPageActions.DeleteItemFromTable(0);
+                shoppingBasketPageActions.DeleteSingleItemFromTable(0);
                 shoppingBasketPageActions.CheckEmptyBasketLabel();
+            }
+        }
+
+        [Test]
+        public void DeleteAllProductsFromTable_TwoProductsAddedToShoppingBasket_ProductsDeletedProperly()
+        {
+            using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
+            {
+                MainPageActions mainPageActions = new MainPageActions(_driver);
+                mainPageActions.OpenMainPage();
+                mainPageActions.AcceptCookieButtonClick();
+                mainPageActions.SelectInStockProduct();
+                mainPageActions.AddProductButtonClick();
+                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                itemPageActions.AddItemButtonClick();
+                itemPageActions.CheckAddItemLabelText();
+                mainPageActions.OpenMainPage();
+                mainPageActions.SelectInStockProduct();
+                mainPageActions.AddProductButtonClick();
+                itemPageActions.AddItemButtonClick();
+                itemPageActions.CheckAddItemLabelText();
+                itemPageActions.GoToBasketPageButtonClick();
+                ShoppingBasketPageActions shoppingBasketPageActions = new ShoppingBasketPageActions(_driver);
+                shoppingBasketPageActions.DeleteAllItemsFromTable();
+
             }
         }
     }

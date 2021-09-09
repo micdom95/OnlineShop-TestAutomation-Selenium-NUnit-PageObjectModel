@@ -87,8 +87,9 @@ namespace SwissHerbalTests.PageObjects.ShoppingBasket
             foreach (var product in AddedItemTable)
             {
                 product.FindElement(By.XPath("//a[@class='remove']")).Click();
+                CheckDeletedProductLabel();
             }
-            CheckDeletedProductLabel();
+            
         }
     }
 }
