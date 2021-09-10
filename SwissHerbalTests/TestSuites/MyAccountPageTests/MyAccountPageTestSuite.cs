@@ -9,10 +9,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 
-namespace SwissHerbalTests.TestSuites.LoginPageTests
+namespace SwissHerbalTests.TestSuites.MyAccountPageTests
 {
     [TestFixture]
-    public class LoginPageTestSuite
+    public class MyAccountPageTestSuite
     {
         [Test]
         [Ignore("Test with Captcha")]

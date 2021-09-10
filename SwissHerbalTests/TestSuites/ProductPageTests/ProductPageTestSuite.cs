@@ -145,12 +145,13 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
         }
 
         [Test]
-        public void CheckOutOfStockAlert_AddUnavailableProduct_AlertDisplayedProperly()
+        [TestCase("https://pl.swissherbal.eu/sklep/noopeptil/")]
+        public void CheckOutOfStockAlert_AddUnavailableProduct_AlertDisplayedProperly(string productUrl)
         {
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
             {
                 ProductPageActions productPageActions = new ProductPageActions(_driver);
-                productPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/noopeptil/");
+                productPageActions.OpenGivenPage(productUrl);
                 productPageActions.AcceptCookiesButtonClick();
                 productPageActions.SelectPackageWith60Capsules();
                 productPageActions.CheckOutOfStockItemLabel();

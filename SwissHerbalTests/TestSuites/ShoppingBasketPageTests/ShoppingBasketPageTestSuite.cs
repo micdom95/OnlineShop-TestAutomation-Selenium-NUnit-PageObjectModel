@@ -11,6 +11,7 @@ using System.Text;
 
 namespace SwissHerbalTests.TestSuites.ShoppingBasketTests
 {
+    [TestFixture]
     public class ShoppingBasketPageTestSuite
     {
         [Test]

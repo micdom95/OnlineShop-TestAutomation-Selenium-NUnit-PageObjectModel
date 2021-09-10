@@ -17,8 +17,4 @@
     <PackageReference Include="Selenium.WebDriver.MicrosoftDriver" Version="17.17134.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="TestSuites\OrderPageTests\" />
-  </ItemGroup>
-
 </Project>

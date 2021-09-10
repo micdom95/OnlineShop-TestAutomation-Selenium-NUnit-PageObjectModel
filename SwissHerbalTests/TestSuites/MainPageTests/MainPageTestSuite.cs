@@ -13,6 +13,7 @@ using System.Threading;
 
 namespace SwissHerbalTests.TestSuites.MainPageTests
 {
+    [TestFixture]
     public class MainPageTestSuite
     {
         [Test]
