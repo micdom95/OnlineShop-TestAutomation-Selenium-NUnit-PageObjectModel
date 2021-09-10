@@ -7,11 +7,11 @@ using System.Text;
 
 namespace SwissHerbalTests.PageObjects.ItemPage
 {
-    public class ItemPageActions : ItemPageLocators
+    public class ProductPageActions : ProductPageLocators
     {
         IWebDriver _driver;
 
-        public ItemPageActions(IWebDriver driver) : base(driver)
+        public ProductPageActions(IWebDriver driver) : base(driver)
         {
             _driver = driver;
         }
@@ -130,7 +130,7 @@ namespace SwissHerbalTests.PageObjects.ItemPage
             AddToWaitingListModal.Displayed.Should().Be(true);
         }
 
-        public void AddToWaitingListModalEmail(string email)
+        public void AddToWaitingListModalEmailTextboxInput(string email)
         {
             AddToWaitingListModalEmailTextbox.Click();
             AddToWaitingListModalEmailTextbox.SendKeys(email);

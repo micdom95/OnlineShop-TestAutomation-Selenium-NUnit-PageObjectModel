@@ -55,7 +55,7 @@ namespace SwissHerbalTests.TestSuites.ShoppingBasketTests
                 mainPageActions.AcceptCookieButtonClick();
                 mainPageActions.SelectInStockProduct();
                 mainPageActions.AddProductButtonClick();
-                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                ProductPageActions itemPageActions = new ProductPageActions(_driver);
                 itemPageActions.AddItemButtonClick();
                 itemPageActions.CheckAddItemLabelText();
                 itemPageActions.GoToBasketPageButtonClick();
@@ -77,7 +77,7 @@ namespace SwissHerbalTests.TestSuites.ShoppingBasketTests
                 mainPageActions.AcceptCookieButtonClick();
                 mainPageActions.SelectInStockProduct();
                 mainPageActions.AddProductButtonClick();
-                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                ProductPageActions itemPageActions = new ProductPageActions(_driver);
                 itemPageActions.AddItemButtonClick();
                 itemPageActions.CheckAddItemLabelText();
                 mainPageActions.CheckBasketItemCounter();
@@ -100,7 +100,7 @@ namespace SwissHerbalTests.TestSuites.ShoppingBasketTests
                 mainPageActions.AcceptCookieButtonClick();
                 mainPageActions.SelectInStockProduct();
                 mainPageActions.AddProductButtonClick();
-                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                ProductPageActions itemPageActions = new ProductPageActions(_driver);
                 itemPageActions.AddItemButtonClick();
                 itemPageActions.CheckAddItemLabelText();
                 itemPageActions.GoToBasketPageButtonClick();
@@ -120,7 +120,7 @@ namespace SwissHerbalTests.TestSuites.ShoppingBasketTests
                 mainPageActions.AcceptCookieButtonClick();
                 mainPageActions.SelectInStockProduct();
                 mainPageActions.AddProductButtonClick();
-                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                ProductPageActions itemPageActions = new ProductPageActions(_driver);
                 itemPageActions.AddItemButtonClick();
                 itemPageActions.CheckAddItemLabelText();
                 mainPageActions.OpenMainPage();
@@ -131,7 +131,6 @@ namespace SwissHerbalTests.TestSuites.ShoppingBasketTests
                 itemPageActions.GoToBasketPageButtonClick();
                 ShoppingBasketPageActions shoppingBasketPageActions = new ShoppingBasketPageActions(_driver);
                 shoppingBasketPageActions.DeleteAllItemsFromTable();
-
             }
         }
     }

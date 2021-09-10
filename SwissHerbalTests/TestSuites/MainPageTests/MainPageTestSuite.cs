@@ -152,7 +152,7 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
-                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                ProductPageActions itemPageActions = new ProductPageActions(_driver);
                 mainPageActions.OpenMainPage();
                 mainPageActions.AcceptCookieButtonClick();
                 mainPageActions.SelectInStockProduct();
@@ -168,7 +168,7 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
-                ItemPageActions itemPageActions = new ItemPageActions(_driver);
+                ProductPageActions itemPageActions = new ProductPageActions(_driver);
                 mainPageActions.OpenMainPage();
                 mainPageActions.AcceptCookieButtonClick();
                 mainPageActions.SelectInStockProduct();

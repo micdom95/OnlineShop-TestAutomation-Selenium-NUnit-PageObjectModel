@@ -5,11 +5,11 @@ using System.Text;
 
 namespace SwissHerbalTests.PageObjects.ItemPage
 {
-    public class ItemPageLocators
+    public class ProductPageLocators
     {
         private IWebDriver _driver;
 
-        public ItemPageLocators(IWebDriver driver)
+        public ProductPageLocators(IWebDriver driver)
         {
             _driver = driver;
         }
