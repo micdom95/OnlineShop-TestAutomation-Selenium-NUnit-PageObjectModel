@@ -47,5 +47,6 @@ namespace SwissHerbalTests.PageObjects.OrderPage
         public IWebElement PaypalCheckbox => _driver.FindElement(By.Id("payment_method_paypal"));
         public IWebElement AcceptTermsCheckbox => _driver.FindElement(By.Id("terms"));
         public IWebElement SummaryButton => _driver.FindElement(By.Id("place_order"));
+        public IList<IWebElement> ErrorLabels => _driver.FindElements(By.XPath("//ul[@class='woocommerce-error']"));
     }
 }
