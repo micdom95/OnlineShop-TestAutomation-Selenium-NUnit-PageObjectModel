@@ -22,8 +22,8 @@ namespace SwissHerbalTests.TestSuites.MyAccountPageTests
             {
                 MyAccountPageActions myAccountPageActions = new MyAccountPageActions(_driver);
                 myAccountPageActions.OpenMyAccountPage();
-                myAccountPageActions.GiveUserLogin("swissherbal123");
-                myAccountPageActions.GiveUserPassword("Testtest1234");
+                myAccountPageActions.GiveUserLogin("");
+                myAccountPageActions.GiveUserPassword("");
                 myAccountPageActions.LoginCaptchaButtonClick();
                 myAccountPageActions.LoginButtonClick();
             }
@@ -37,7 +37,7 @@ namespace SwissHerbalTests.TestSuites.MyAccountPageTests
                 MyAccountPageActions myAccountPageActions = new MyAccountPageActions(_driver);
                 myAccountPageActions.OpenMyAccountPage();
                 myAccountPageActions.GiveUserLogin("");
-                myAccountPageActions.GiveUserPassword("Testtest1234");
+                myAccountPageActions.GiveUserPassword("");
                 myAccountPageActions.LoginCaptchaButtonClick();
                 myAccountPageActions.LoginButtonClick();
             }
@@ -50,7 +50,7 @@ namespace SwissHerbalTests.TestSuites.MyAccountPageTests
             {
                 MyAccountPageActions myAccountPageActions = new MyAccountPageActions(_driver);
                 myAccountPageActions.OpenMyAccountPage();
-                myAccountPageActions.GiveUserLogin("swissherbal123");
+                myAccountPageActions.GiveUserLogin("");
                 myAccountPageActions.GiveUserPassword("");
                 myAccountPageActions.LoginCaptchaButtonClick();
                 myAccountPageActions.LoginButtonClick();
