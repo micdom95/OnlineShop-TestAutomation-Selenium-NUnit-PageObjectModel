@@ -24,7 +24,7 @@ namespace SwissHerbalTests.PageObjects.OrderPage
         public IWebElement CouponCodeTextbox => _driver.FindElement(By.Id("coupon_code"));
         public IWebElement RealiseCouponButton => _driver.FindElement(By.XPath("//button[@name='apply_coupon']"));
         public IWebElement BillingFirstName => _driver.FindElement(By.Id("billing_first_name"));
-        public IWebElement BillingSurnameName => _driver.FindElement(By.Id("billing_last_name"));
+        public IWebElement BillingSurname => _driver.FindElement(By.Id("billing_last_name"));
         public IWebElement BillingCompany => _driver.FindElement(By.Id("billing_company"));
         public IWebElement BillingEmail => _driver.FindElement(By.Id("billing_email"));
         public IWebElement BillingPhone => _driver.FindElement(By.Id("billing_phone"));
@@ -52,7 +52,7 @@ namespace SwissHerbalTests.PageObjects.OrderPage
         public IWebElement TPayTransferCheckbox => _driver.FindElement(By.Id("payment_method_transferuj"));
         public IList<IWebElement> TPayBanksTable => _driver.FindElements(By.XPath("//div[@id='bank-selection-form']"));
         public IWebElement TPayAcceptTermsCheckbox => _driver.FindElement(By.XPath("//label[@class='tpay-info-label']"));
-        public IWebElement PaypalCheckbox => _driver.FindElement(By.Id("payment_method_paypal"));
+        public IWebElement PayPalCheckbox => _driver.FindElement(By.Id("payment_method_paypal"));
         public IWebElement AcceptTermsCheckbox => _driver.FindElement(By.Id("terms"));
         public IWebElement SummaryButton => _driver.FindElement(By.Id("place_order"));
         public IList<IWebElement> ErrorLabels => _driver.FindElements(By.XPath("//ul[@class='woocommerce-error']"));

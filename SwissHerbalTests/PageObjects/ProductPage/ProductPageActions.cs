@@ -59,6 +59,7 @@ namespace SwissHerbalTests.PageObjects.ItemPage
 
         public void SelectPackageWithoutChoosenOption()
         {
+            SelectPackageOption.Displayed.Should().BeTrue();
             SelectPackageOption.Click();
             SelectElement dropdown = new SelectElement(SelectPackageField);
             dropdown.SelectByValue("");
