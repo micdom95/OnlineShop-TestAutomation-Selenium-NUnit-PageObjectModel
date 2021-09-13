@@ -109,7 +109,6 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
                 mainPageActions.OpenMainPage();
                 mainPageActions.SearchIconButtonClick();
                 mainPageActions.SearchEngineButtonClick("");
-                Thread.Sleep(5000);
             }
         }
 

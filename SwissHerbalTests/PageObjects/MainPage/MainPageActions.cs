@@ -63,13 +63,13 @@ namespace SwissHerbalTests.PageObjects.MainPage
             BasketItemCounter.Text.Should().Be(counter);
         }
 
-        public void SuplementsTabHover()
+        public void SuplementsTabHover(string url)
         {
             Actions actions = new Actions(_driver);
             actions.MoveToElement(SuplementsTab).Perform();
             actions.MoveToElement(SuplementsTabSubMenu).Perform();
             actions.Click().Build().Perform();
-            _driver.Url.Should().Be("https://pl.swissherbal.eu/kategoria-produktu/energia/");
+            _driver.Url.Should().Be(url);
         }
 
         public void SearchIconButtonClick()

@@ -298,6 +298,7 @@ namespace SwissHerbalTests.PageObjects.OrderPage
 
         public void CheckEmailFormatErrorLabel()
         {
+            //TODO
             WaitForAction.WaitUntilElementVisible(_driver, By.XPath("//ul[@class='woocommerce-error']"));
             IWebElement emailErrorLabel = (IWebElement)ErrorLabels.Select(item => item.Text.Contains("Nieprawidłowy adres e-mail płatności"));
             emailErrorLabel.Displayed.Should().BeTrue();
