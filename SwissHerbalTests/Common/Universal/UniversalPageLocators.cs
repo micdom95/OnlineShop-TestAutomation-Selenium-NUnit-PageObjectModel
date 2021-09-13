@@ -17,6 +17,8 @@ namespace SwissHerbalTests.Common.Universal
         public IWebElement MyAccountButton => _driver.FindElement(By.LinkText("Moje konto"));
         public IWebElement BasketButton => _driver.FindElement(By.LinkText("Koszyk"));
         public IWebElement OrderButton => _driver.FindElement(By.LinkText("Zamówienie"));
+        public IWebElement SuplementsTab => _driver.FindElement(By.CssSelector("a[title='SUPLEMENTY']"));
+        public IWebElement SuplementsTabSubMenu => _driver.FindElement(By.LinkText("ENERGIA"));
         public IWebElement AcceptCookieButton => _driver.FindElement(By.CssSelector("a[id='cookie_action_close_header']"));
     }
 }
