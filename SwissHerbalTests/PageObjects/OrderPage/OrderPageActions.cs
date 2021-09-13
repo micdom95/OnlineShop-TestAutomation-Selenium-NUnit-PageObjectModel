@@ -4,6 +4,7 @@ using OpenQA.Selenium.Support.UI;
 using SwissHerbalTests.Common.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace SwissHerbalTests.PageObjects.OrderPage
@@ -261,7 +262,7 @@ namespace SwissHerbalTests.PageObjects.OrderPage
         }
 
         //TODO TPAY TABLE HANDLER
-
+        
         public void TPayAcceptTermsCheckboxChecked()
         {
             TPayAcceptTermsCheckbox.Displayed.Should().BeTrue();
@@ -284,6 +285,22 @@ namespace SwissHerbalTests.PageObjects.OrderPage
         {
             SummaryButton.Displayed.Should().BeTrue();
             SummaryButton.Click();
+        }
+
+        public void CheckAllErrorLabels()
+        {
+            WaitForAction.WaitUntilElementVisible(_driver, By.XPath("//ul[@class='woocommerce-error']"));
+            foreach (var label in ErrorLabels)
+            {
+                label.Displayed.Should().BeTrue();
+            }
+        }
+
+        public void CheckEmailFormatErrorLabel()
+        {
+            WaitForAction.WaitUntilElementVisible(_driver, By.XPath("//ul[@class='woocommerce-error']"));
+            IWebElement emailErrorLabel = (IWebElement)ErrorLabels.Select(item => item.Text.Contains("Nieprawidłowy adres e-mail płatności"));
+            emailErrorLabel.Displayed.Should().BeTrue();
         }
     }
 }
