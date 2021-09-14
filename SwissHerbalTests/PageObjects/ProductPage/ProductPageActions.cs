@@ -153,8 +153,7 @@ namespace SwissHerbalTests.PageObjects.ItemPage
         public void AddToWaitingListModalNotificationButtonClick()
         {
             AddToWaitingListModalNotificationButton.Click();
-            WaitForAction.WaitUntilElementExists(_driver, By.XPath("//div[@class='xoo-wl-inmodal']"));
-            _driver.SwitchTo().Frame(WaitingListModal);
+            WaitForAction.WaitUntilElementExists(_driver, By.XPath("//div[@class='xoo-wl-container xoo-wl-active']"));
             WaitingListModal.Displayed.Should().BeTrue();
         }
 

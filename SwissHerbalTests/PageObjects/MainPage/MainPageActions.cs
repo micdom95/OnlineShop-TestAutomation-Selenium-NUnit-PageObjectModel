@@ -73,7 +73,7 @@ namespace SwissHerbalTests.PageObjects.MainPage
             SelectElement dropdown = new SelectElement(SuplementsTab);
             dropdown.SelectByText(suplementsTab.ToString());
             actions.Click().Build().Perform();
-            string url = (@"https://pl.swissherbal.eu/kategoria-produktu/{suplementsTab.ToString/}");
+            string url = ($"https://pl.swissherbal.eu/kategoria-produktu/{suplementsTab.ToString().ToLower()}/");
             _driver.Url.Should().Be(url);
         }
 
