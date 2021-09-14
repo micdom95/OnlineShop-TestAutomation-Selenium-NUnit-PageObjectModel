@@ -29,6 +29,7 @@ namespace SwissHerbalTests.PageObjects.ItemPage
         public IWebElement AddToWaitingListModal => _driver.FindElement(By.CssSelector("div[class='xoo - wl - inmodal']"));
         public IWebElement AddToWaitingListModalEmailTextbox => _driver.FindElement(By.ClassName("xoo - wl - email"));
         public IWebElement AddToWaitingListModalNotificationButton => _driver.FindElement(By.Name("xoo-wl-submit"));
+        public IWebElement WaitingListModal => _driver.FindElement(By.XPath("//div[@class='xoo-wl-inmodal']"));
         public IWebElement ModalEmptyEmailErrorLabel => _driver.FindElement(By.CssSelector("span[class='xoo-wl-error']"));
         public IWebElement ModalIncorrectEmailErrorLabel => _driver.FindElement(By.CssSelector("span[class='xoo-wl-error']"));
         public IWebElement AcceptCookieButton => _driver.FindElement(By.CssSelector("a[id='cookie_action_close_header']"));

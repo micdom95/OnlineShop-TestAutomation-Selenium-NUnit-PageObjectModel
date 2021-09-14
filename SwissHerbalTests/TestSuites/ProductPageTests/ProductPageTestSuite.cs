@@ -103,7 +103,7 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
             {
                 ProductPageActions productPageActions = new ProductPageActions(_driver);
-                productPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/memostim/");
+                productPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/immuno-box-mushroom-synergy/");
                 productPageActions.AcceptCookiesButtonClick();
                 productPageActions.CheckTemporaryMissingLabel();
                 productPageActions.AddToWaitingListButtonClick();
@@ -120,7 +120,7 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
             {
                 ProductPageActions productPageActions = new ProductPageActions(_driver);
-                productPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/memostim/");
+                productPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/immuno-box-mushroom-synergy/");
                 productPageActions.AcceptCookiesButtonClick();
                 productPageActions.CheckTemporaryMissingLabel();
                 productPageActions.AddToWaitingListButtonClick();

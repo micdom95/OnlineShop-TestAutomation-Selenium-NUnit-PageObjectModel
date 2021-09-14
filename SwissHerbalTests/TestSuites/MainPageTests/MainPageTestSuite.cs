@@ -113,13 +113,14 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
         }
 
         [Test]
-        public void SuplementsTab_ClickEnergyTab_TabOpenedProperly()
+        [TestCase(SuplementsTabs.ENERGIA)]
+        public void SuplementsTab_ClickEnergyTab_TabOpenedProperly(SuplementsTabs suplementsTab)
         {
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 mainPageActions.OpenMainPage();
-                mainPageActions.SuplementsTabHover();
+                mainPageActions.SuplementsTabHover(suplementsTab);
             }
         }
 
@@ -194,6 +195,5 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
                 mainPageActions.AddProductButtonClick();
             }
         }
-
     }
 }

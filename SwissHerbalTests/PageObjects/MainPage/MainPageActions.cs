@@ -1,6 +1,8 @@
 ﻿using FluentAssertions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
+using SwissHerbalTests.Common.Enums;
 using SwissHerbalTests.Common.Extensions;
 using System;
 using System.Collections.Generic;
@@ -63,12 +65,15 @@ namespace SwissHerbalTests.PageObjects.MainPage
             BasketItemCounter.Text.Should().Be(counter);
         }
 
-        public void SuplementsTabHover(string url)
+        public void SuplementsTabHover(SuplementsTabs suplementsTab)
         {
             Actions actions = new Actions(_driver);
             actions.MoveToElement(SuplementsTab).Perform();
-            actions.MoveToElement(SuplementsTabSubMenu).Perform();
+            //actions.MoveToElement((IWebElement)SuplementsTabSubMenu.Select(tab => tab.Text.Contains(suplementsTab.ToString())));
+            SelectElement dropdown = new SelectElement(SuplementsTab);
+            dropdown.SelectByText(suplementsTab.ToString());
             actions.Click().Build().Perform();
+            string url = (@"https://pl.swissherbal.eu/kategoria-produktu/{suplementsTab.ToString/}");
             _driver.Url.Should().Be(url);
         }
 

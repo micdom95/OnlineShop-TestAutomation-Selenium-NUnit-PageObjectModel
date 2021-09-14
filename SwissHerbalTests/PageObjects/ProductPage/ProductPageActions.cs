@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SwissHerbalTests.Common.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -152,6 +153,9 @@ namespace SwissHerbalTests.PageObjects.ItemPage
         public void AddToWaitingListModalNotificationButtonClick()
         {
             AddToWaitingListModalNotificationButton.Click();
+            WaitForAction.WaitUntilElementExists(_driver, By.XPath("//div[@class='xoo-wl-inmodal']"));
+            _driver.SwitchTo().Frame(WaitingListModal);
+            WaitingListModal.Displayed.Should().BeTrue();
         }
 
         public void AcceptOptionAlertButton()

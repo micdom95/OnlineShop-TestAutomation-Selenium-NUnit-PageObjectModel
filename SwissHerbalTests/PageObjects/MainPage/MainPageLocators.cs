@@ -20,7 +20,7 @@ namespace SwissHerbalTests.PageObjects.MainPage
         public IWebElement SuplementsTab => _driver.FindElement(By.CssSelector("a[title='SUPLEMENTY']"));
         public IWebElement ResourcesTab => _driver.FindElement(By.CssSelector("a[title='SUROWCE']"));
         public IWebElement NeuroregulationTab => _driver.FindElement(By.CssSelector("a[title='NEUROREGULACJA']"));
-        public IWebElement SuplementsTabSubMenu => _driver.FindElement(By.LinkText("ENERGIA"));
+        public IList<IWebElement> SuplementsTabSubMenu => _driver.FindElement(By.CssSelector("a[title='SUPLEMENTY']")).FindElements(By.XPath("//ul[@role='menu']"));
         public IWebElement SearchIconButton => _driver.FindElement(By.CssSelector("[class='glyphicon  glyphicon-search  glyphicon-search--nav']"));
         public IWebElement SearchTextbox => _driver.FindElement(By.Name("s"));
         public IWebElement SearchEngineButton => _driver.FindElement(By.XPath("//span[@class='glyphicon  glyphicon-search']"));
