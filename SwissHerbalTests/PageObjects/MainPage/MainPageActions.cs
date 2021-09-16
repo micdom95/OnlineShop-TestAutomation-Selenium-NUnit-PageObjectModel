@@ -73,7 +73,18 @@ namespace SwissHerbalTests.PageObjects.MainPage
             SelectElement dropdown = new SelectElement(SuplementsTab);
             dropdown.SelectByText(suplementsTab.ToString());
             actions.Click().Build().Perform();
-            string url = ($"https://pl.swissherbal.eu/kategoria-produktu/{suplementsTab.ToString().ToLower()}/");
+            
+            string url;
+            
+            if (suplementsTab == SuplementsTabs.KONCENTRACJA)
+                url = ("https://pl.swissherbal.eu/kategoria-produktu/nauka/");
+            else if (suplementsTab == SuplementsTabs.DETOKS || suplementsTab == SuplementsTabs.ODPORNOŚĆ)
+                url = ($"https://pl.swissherbal.eu/kategoria-produktu/suplementy/{suplementsTab.ToString().ToLower().Replace('ś','s').Replace('ć','c')}");
+            else if (suplementsTab == SuplementsTabs.WITALNOŚĆ)
+                url = ("https://pl.swissherbal.eu/kategoria-produktu/zdrowie/");
+            else
+                url = ($"https://pl.swissherbal.eu/kategoria-produktu/{suplementsTab.ToString().ToLower()}/");
+            
             _driver.Url.Should().Be(url);
         }
 

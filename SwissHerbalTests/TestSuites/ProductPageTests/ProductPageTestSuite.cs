@@ -27,6 +27,7 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
         [TestCase("-1")]
         [TestCase("0")]
         [TestCase("1")]
+        [TestCase("2.5")]
         public void CounterField_SetValue_ValueSetProperly(string value)
         {
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
