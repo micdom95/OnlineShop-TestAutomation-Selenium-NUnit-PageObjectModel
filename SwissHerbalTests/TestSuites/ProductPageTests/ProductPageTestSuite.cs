@@ -45,7 +45,7 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
             {
                 ProductPageActions productPageActions = new ProductPageActions(_driver);
                 productPageActions.OpenRandomAvailableProductPage();
-                productPageActions.SelectPackageFieldClick();
+                productPageActions.ClickSelectPackageField();
                 productPageActions.SelectPackageWithoutChoosenOption();
             }
         }
@@ -57,10 +57,10 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
             {
                 ProductPageActions productPageActions = new ProductPageActions(_driver);
                 productPageActions.OpenRandomAvailableProductPage();
-                productPageActions.AcceptCookiesButtonClick();
-                productPageActions.SelectPackageFieldClick();
+                productPageActions.ClickAcceptCookiesButton();
+                productPageActions.ClickSelectPackageField();
                 productPageActions.SelectPackageWith30Capsules();
-                productPageActions.AddItemButtonClick();
+                productPageActions.ClickAddItemButton();
                 productPageActions.CheckAddItemLabelText();
             }
         }
@@ -72,7 +72,7 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
             {
                 ProductPageActions productPageActions = new ProductPageActions(_driver);
                 productPageActions.OpenRandomUnavailableProductPage();
-                productPageActions.AcceptCookiesButtonClick();
+                productPageActions.ClickAcceptCookiesButton();
                 productPageActions.CheckOutOfStockItemLabel();
             }
         }
@@ -84,13 +84,13 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
             {
                 ProductPageActions productPageActions = new ProductPageActions(_driver);
                 productPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/adrafinil-dlpa/");
-                productPageActions.AcceptCookiesButtonClick();
+                productPageActions.ClickAcceptCookiesButton();
                 productPageActions.CheckTemporaryMissingLabel();
-                productPageActions.SelectPackageFieldClick();
+                productPageActions.ClickSelectPackageField();
                 productPageActions.SelectPackageWith30Capsules();
                 productPageActions.CheckOutOfStockItemLabel();
                 productPageActions.CheckTemporaryMissingLabel();
-                productPageActions.SelectPackageFieldClick();
+                productPageActions.ClickSelectPackageField();
                 productPageActions.SelectPackageWith60Capsules();
                 productPageActions.CheckOutOfStockItemLabel();
                 productPageActions.CheckTemporaryMissingLabel();
@@ -105,11 +105,11 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
             {
                 ProductPageActions productPageActions = new ProductPageActions(_driver);
                 productPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/immuno-box-mushroom-synergy/");
-                productPageActions.AcceptCookiesButtonClick();
+                productPageActions.ClickAcceptCookiesButton();
                 productPageActions.CheckTemporaryMissingLabel();
-                productPageActions.AddToWaitingListButtonClick();
+                productPageActions.ClickAddToWaitingListButton();
                 productPageActions.AddToWaitingListModalEmailTextboxInput(email);
-                productPageActions.AddToWaitingListModalNotificationButtonClick();
+                productPageActions.ClickAddToWaitingListModalNotificationButton();
                 productPageActions.CheckModalIncorrectEmailErrorLabel();
             }
         }
@@ -122,11 +122,11 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
             {
                 ProductPageActions productPageActions = new ProductPageActions(_driver);
                 productPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/immuno-box-mushroom-synergy/");
-                productPageActions.AcceptCookiesButtonClick();
+                productPageActions.ClickAcceptCookiesButton();
                 productPageActions.CheckTemporaryMissingLabel();
-                productPageActions.AddToWaitingListButtonClick();
+                productPageActions.ClickAddToWaitingListButton();
                 productPageActions.AddToWaitingListModalEmailTextboxInput(email);
-                productPageActions.AddToWaitingListModalNotificationButtonClick();
+                productPageActions.ClickAddToWaitingListModalNotificationButton();
                 productPageActions.CheckModalEmptyEmailErrorLabel();
             }
         }
@@ -138,9 +138,9 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
             {
                 ProductPageActions productPageActions = new ProductPageActions(_driver);
                 productPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/neuridine/");
-                productPageActions.AcceptCookiesButtonClick();
-                productPageActions.ClearPackageOptionButtonClick();
-                productPageActions.AddItemWithoutSelectedOptionButtonClick();
+                productPageActions.ClickAcceptCookiesButton();
+                productPageActions.ClickClearPackageOptionButton();
+                productPageActions.ClickAddItemWithoutSelectedOptionButton();
                 productPageActions.AcceptOptionAlertButton();
             }
         }
@@ -153,10 +153,10 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
             {
                 ProductPageActions productPageActions = new ProductPageActions(_driver);
                 productPageActions.OpenGivenPage(productUrl);
-                productPageActions.AcceptCookiesButtonClick();
+                productPageActions.ClickAcceptCookiesButton();
                 productPageActions.SelectPackageWith60Capsules();
                 productPageActions.CheckOutOfStockItemLabel();
-                productPageActions.AddUnavailableItemButtonClick();
+                productPageActions.ClickAddUnavailableItemButton();
                 productPageActions.AcceptOutOfStockAlertButton();
             }
         }
@@ -168,9 +168,9 @@ namespace SwissHerbalTests.TestSuites.ItemPageTests
             {
                 ProductPageActions productPageActions = new ProductPageActions(_driver);
                 productPageActions.OpenGivenPage("https://pl.swissherbal.eu/sklep/noopeptil/");
-                productPageActions.AcceptCookiesButtonClick();
+                productPageActions.ClickAcceptCookiesButton();
                 productPageActions.SelectPackageWithoutChoosenOption();
-                productPageActions.AddItemWithoutSelectedOptionButtonClick();
+                productPageActions.ClickAddItemWithoutSelectedOptionButton();
                 productPageActions.AcceptOptionAlertButton();
             }
         }

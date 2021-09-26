@@ -96,7 +96,7 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 mainPageActions.OpenMainPage();
-                mainPageActions.SearchIconButtonClick();
+                mainPageActions.ClickSearchIconButton();
             }
         }
 
@@ -107,8 +107,8 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 mainPageActions.OpenMainPage();
-                mainPageActions.SearchIconButtonClick();
-                mainPageActions.SearchEngineButtonClick("");
+                mainPageActions.ClickSearchIconButton();
+                mainPageActions.ClickSearchEngineButton("");
             }
         }
 
@@ -120,8 +120,24 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 mainPageActions.OpenMainPage();
+                mainPageActions.ClickAcceptCookieButton();
                 mainPageActions.SuplementsTabHover(suplementsTab);
             }
+        }
+
+        [Test]
+        [TestCase(3)]
+        public void SuplementsTab_ClickTabWithIndex3_TabOpenedProperly(int index)
+        {
+            using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
+            {
+                MainPageActions mainPageActions = new MainPageActions(_driver);
+                mainPageActions.OpenMainPage();
+                mainPageActions.ClickAcceptCookieButton();
+                mainPageActions.SelectTabFromSuplementsHover(index);
+                Thread.Sleep(5000);
+            }
+
         }
 
         [Test]
@@ -155,10 +171,10 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 ProductPageActions itemPageActions = new ProductPageActions(_driver);
                 mainPageActions.OpenMainPage();
-                mainPageActions.AcceptCookieButtonClick();
+                mainPageActions.ClickAcceptCookieButton();
                 mainPageActions.SelectInStockProduct();
-                mainPageActions.AddProductButtonClick();
-                itemPageActions.AddItemButtonClick();
+                mainPageActions.ClickAddProductButton();
+                itemPageActions.ClickAddItemButton();
                 mainPageActions.CheckBasketItemCounter();
             }
         }
@@ -171,11 +187,11 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 ProductPageActions itemPageActions = new ProductPageActions(_driver);
                 mainPageActions.OpenMainPage();
-                mainPageActions.AcceptCookieButtonClick();
+                mainPageActions.ClickAcceptCookieButton();
                 mainPageActions.SelectInStockProduct();
-                mainPageActions.AddProductButtonClick();
+                mainPageActions.ClickAddProductButton();
                 itemPageActions.SelectPackageWith60Capsules();
-                itemPageActions.AddItemButtonClick();
+                itemPageActions.ClickAddItemButton();
                 itemPageActions.CheckAddItemLabelText();
                 mainPageActions.CheckBasketItemCounter();
                 mainPageActions.OpenOrderPage();
@@ -190,9 +206,9 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 mainPageActions.OpenMainPage();
-                mainPageActions.AcceptCookieButtonClick();
+                mainPageActions.ClickAcceptCookieButton();
                 mainPageActions.SelectOutOfStockProduct();
-                mainPageActions.AddProductButtonClick();
+                mainPageActions.ClickAddProductButton();
             }
         }
     }

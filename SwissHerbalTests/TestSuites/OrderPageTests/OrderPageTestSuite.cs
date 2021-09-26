@@ -21,15 +21,15 @@ namespace SwissHerbalTests.TestSuites.OrderPageTests
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 mainPageActions.OpenMainPage();
-                mainPageActions.AcceptCookieButtonClick();
+                mainPageActions.ClickAcceptCookieButton();
                 mainPageActions.SelectInStockProduct();
-                mainPageActions.AddProductButtonClick();
+                mainPageActions.ClickAddProductButton();
                 ProductPageActions itemPageActions = new ProductPageActions(_driver);
-                itemPageActions.AddItemButtonClick();
+                itemPageActions.ClickAddItemButton();
                 itemPageActions.CheckAddItemLabelText();
                 mainPageActions.OpenOrderPage();
                 OrderPageActions orderPageActions = new OrderPageActions(_driver);
-                orderPageActions.SummaryButtonClick();
+                orderPageActions.ClickSummaryButton();
                 orderPageActions.CheckAllErrorLabels();
             }
         }
@@ -42,16 +42,16 @@ namespace SwissHerbalTests.TestSuites.OrderPageTests
             {
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 mainPageActions.OpenMainPage();
-                mainPageActions.AcceptCookieButtonClick();
+                mainPageActions.ClickAcceptCookieButton();
                 mainPageActions.SelectInStockProduct();
-                mainPageActions.AddProductButtonClick();
+                mainPageActions.ClickAddProductButton();
                 ProductPageActions itemPageActions = new ProductPageActions(_driver);
-                itemPageActions.AddItemButtonClick();
+                itemPageActions.ClickAddItemButton();
                 itemPageActions.CheckAddItemLabelText();
                 mainPageActions.OpenOrderPage();
                 OrderPageActions orderPageActions = new OrderPageActions(_driver);
                 orderPageActions.BillingEmailInput(invalidEmail);
-                orderPageActions.SummaryButtonClick();
+                orderPageActions.ClickSummaryButton();
                 orderPageActions.CheckEmailFormatErrorLabel();
             }
         }

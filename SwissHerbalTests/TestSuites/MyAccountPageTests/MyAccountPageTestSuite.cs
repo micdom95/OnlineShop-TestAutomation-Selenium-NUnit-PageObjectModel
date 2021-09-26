@@ -24,8 +24,8 @@ namespace SwissHerbalTests.TestSuites.MyAccountPageTests
                 myAccountPageActions.OpenMyAccountPage();
                 myAccountPageActions.GiveUserLogin("");
                 myAccountPageActions.GiveUserPassword("");
-                myAccountPageActions.LoginCaptchaButtonClick();
-                myAccountPageActions.LoginButtonClick();
+                myAccountPageActions.ClickLoginCaptchaButton();
+                myAccountPageActions.ClickLoginButton();
             }
         }
         [Test]
@@ -38,8 +38,8 @@ namespace SwissHerbalTests.TestSuites.MyAccountPageTests
                 myAccountPageActions.OpenMyAccountPage();
                 myAccountPageActions.GiveUserLogin("");
                 myAccountPageActions.GiveUserPassword("");
-                myAccountPageActions.LoginCaptchaButtonClick();
-                myAccountPageActions.LoginButtonClick();
+                myAccountPageActions.ClickLoginCaptchaButton();
+                myAccountPageActions.ClickLoginButton();
             }
         }
         [Test]
@@ -52,8 +52,8 @@ namespace SwissHerbalTests.TestSuites.MyAccountPageTests
                 myAccountPageActions.OpenMyAccountPage();
                 myAccountPageActions.GiveUserLogin("");
                 myAccountPageActions.GiveUserPassword("");
-                myAccountPageActions.LoginCaptchaButtonClick();
-                myAccountPageActions.LoginButtonClick();
+                myAccountPageActions.ClickLoginCaptchaButton();
+                myAccountPageActions.ClickLoginButton();
             }
         }
     }

@@ -53,7 +53,7 @@ namespace SwissHerbalTests.PageObjects.MainPage
             OrderButton.Click();
         }
 
-        public void AcceptCookieButtonClick()
+        public void ClickAcceptCookieButton()
         {
             AcceptCookieButton.Displayed.Should().BeTrue();
             AcceptCookieButton.Click();
@@ -88,7 +88,16 @@ namespace SwissHerbalTests.PageObjects.MainPage
             _driver.Url.Should().Be(url);
         }
 
-        public void SearchIconButtonClick()
+        public void SelectTabFromSuplementsHover(int index)
+        {
+            Actions actions = new Actions(_driver);
+            actions.MoveToElement(SuplementsTab).Perform();
+            WaitForAction.WaitUntilElementVisible(_driver, By.XPath("//ul[@role='menu']"));
+            SelectElement dropdown = new SelectElement(SuplementsTab);
+            dropdown.SelectByIndex(index);
+        }
+        
+        public void ClickSearchIconButton()
         {
             SearchIconButton.Displayed.Should().BeTrue();
             SearchIconButton.Click();
@@ -99,7 +108,7 @@ namespace SwissHerbalTests.PageObjects.MainPage
             SearchTextbox.SendKeys(text);
         }
 
-        public void SearchEngineButtonClick(string text)
+        public void ClickSearchEngineButton(string text)
         {
             SearchEngineButton.Click();
         }
@@ -109,7 +118,7 @@ namespace SwissHerbalTests.PageObjects.MainPage
             SearchResultLabel.Text.Should().Contain(text);
         }
 
-        public void AddProductButtonClick()
+        public void ClickAddProductButton()
         {
             AddProductButton.Click();
         }

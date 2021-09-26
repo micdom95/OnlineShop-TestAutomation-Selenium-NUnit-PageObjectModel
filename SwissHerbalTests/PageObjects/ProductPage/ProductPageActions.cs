@@ -33,7 +33,7 @@ namespace SwissHerbalTests.PageObjects.ItemPage
             _driver.Navigate().GoToUrl("https://pl.swissherbal.eu/sklep/comfortil-max/");
         }
 
-        public void AcceptCookiesButtonClick()
+        public void ClickAcceptCookiesButton()
         {
             AcceptCookieButton.Text.Should().Be("Rozumiem. Zamknij.");
             AcceptCookieButton.Click();
@@ -47,12 +47,12 @@ namespace SwissHerbalTests.PageObjects.ItemPage
             //ItemCounterField.Text.Should().Be(value);
         }
 
-        public void SelectPackageFieldClick()
+        public void ClickSelectPackageField()
         {
             SelectPackageField.Click();
         }
 
-        public void ClearPackageOptionButtonClick()
+        public void ClickClearPackageOptionButton()
         {
             ClearPackageOptionButton.Displayed.Should().BeTrue();
             ClearPackageOptionButton.Click();
@@ -81,21 +81,21 @@ namespace SwissHerbalTests.PageObjects.ItemPage
             dropdown.SelectByValue("60-kapsulek");
         }
 
-        public void AddItemButtonClick()
+        public void ClickAddItemButton()
         {
             AddItemButton.Displayed.Should().BeTrue();
             AddItemButton.Text.Should().Be("DODAJ DO KOSZYKA");
             AddItemButton.Click();
         }
 
-        public void AddItemWithoutSelectedOptionButtonClick()
+        public void ClickAddItemWithoutSelectedOptionButton()
         {
             AddItemWithoutSelectedOptionButton.Displayed.Should().BeTrue();
             AddItemWithoutSelectedOptionButton.Text.Should().Be("DODAJ DO KOSZYKA");
             AddItemWithoutSelectedOptionButton.Click();
         }
 
-        public void AddUnavailableItemButtonClick()
+        public void ClickAddUnavailableItemButton()
         {
             AddUnavailableItemButton.Displayed.Should().BeTrue();
             AddUnavailableItemButton.Text.Should().Be("DODAJ DO KOSZYKA");
@@ -119,13 +119,13 @@ namespace SwissHerbalTests.PageObjects.ItemPage
             TemporaryMissingLaber.Text.Should().Be("Chwilowo brak");
         }
 
-        public void GoToBasketPageButtonClick()
+        public void ClickGoToBasketPageButton()
         {
             GoToBasketPageButton.Displayed.Should().BeTrue();
             GoToBasketPageButton.Click();
         }
 
-        public void AddToWaitingListButtonClick()
+        public void ClickAddToWaitingListButton()
         {
             AddToWaitingListButton.Displayed.Should().Be(true);
             AddToWaitingListButton.Click();
@@ -150,7 +150,7 @@ namespace SwissHerbalTests.PageObjects.ItemPage
             ModalIncorrectEmailErrorLabel.Text.Should().Be("Please enter valid email address.");
         }
 
-        public void AddToWaitingListModalNotificationButtonClick()
+        public void ClickAddToWaitingListModalNotificationButton()
         {
             AddToWaitingListModalNotificationButton.Click();
             WaitForAction.WaitUntilElementExists(_driver, By.XPath("//div[@class='xoo-wl-container xoo-wl-active']"));

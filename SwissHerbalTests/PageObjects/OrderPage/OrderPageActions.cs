@@ -18,16 +18,16 @@ namespace SwissHerbalTests.PageObjects.OrderPage
             _driver = driver;
         }
 
-        public void AcceptCookiesButtonClick()
+        public void ClickAcceptCookiesButton()
         {
             AcceptCookieButton.Text.Should().Be("Rozumiem. Zamknij.");
             AcceptCookieButton.Click();
         }
 
-        public void ClickForLogInButtonClick()
+        public void ClickForLogInButton()
         {
-            ClickForLogInButton.Displayed.Should().BeTrue();
-            ClickForLogInButton.Click();
+            ButtonForLogin.Displayed.Should().BeTrue();
+            ButtonForLogin.Click();
         }
 
         public void UserLoginTextboxInput(string userLogin)
@@ -50,16 +50,16 @@ namespace SwissHerbalTests.PageObjects.OrderPage
             RememberMeCheckbox.Click();
         }
 
-        public void LogInButtonClick()
+        public void ClickLogInButton()
         {
             LogInButton.Displayed.Should().BeTrue();
             LogInButton.Click();
         }
 
-        public void ClickForAddCouponButtonClick()
+        public void ClickForAddCouponButton()
         {
-            ClickForAddCouponButton.Displayed.Should().BeTrue();
-            ClickForAddCouponButton.Click();
+            AddCouponButton.Displayed.Should().BeTrue();
+            AddCouponButton.Click();
         }
 
         public void CouponCodeTextboxInput(string couponCode)
@@ -69,7 +69,7 @@ namespace SwissHerbalTests.PageObjects.OrderPage
             CouponCodeTextbox.SendKeys(couponCode);
         }
 
-        public void RealiseCouponButtonClick()
+        public void ClickRealiseCouponButton()
         {
             RealiseCouponButton.Displayed.Should().BeTrue();
             RealiseCouponButton.Click();
@@ -281,7 +281,7 @@ namespace SwissHerbalTests.PageObjects.OrderPage
             AcceptTermsCheckbox.Click();
         }
 
-        public void SummaryButtonClick()
+        public void ClickSummaryButton()
         {
             SummaryButton.Displayed.Should().BeTrue();
             SummaryButton.Click();

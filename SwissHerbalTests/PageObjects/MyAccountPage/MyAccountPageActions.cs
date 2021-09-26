@@ -34,7 +34,7 @@ namespace SwissHerbalTests.PageObjects.MyAccountPage
             UserPasswordField.SendKeys(userPassword);
         }
        
-        public void LoginButtonClick()
+        public void ClickLoginButton()
         {
             LoginButton.Displayed.Should().BeTrue();
             LoginButton.Click();
@@ -58,19 +58,19 @@ namespace SwissHerbalTests.PageObjects.MyAccountPage
             RegisterUserPasswordField.SendKeys(newUserPassword);
         }
         
-        public void RegisterButtonClick()
+        public void ClickRegisterButton()
         {
             RegisterButton.Displayed.Should().BeTrue();
             RegisterButton.Click();
         }
         
-        public void RemindUserPasswordButtonClick()
+        public void ClickRemindUserPasswordButton()
         {
             RemindUserPasswordButton.Displayed.Should().BeTrue();
             RemindUserPasswordButton.Click();
         }
         
-        public void LoginCaptchaButtonClick()
+        public void ClickLoginCaptchaButton()
         {
             LoginCaptchaButton.Displayed.Should().BeTrue();
             LoginCaptchaButton.Click();

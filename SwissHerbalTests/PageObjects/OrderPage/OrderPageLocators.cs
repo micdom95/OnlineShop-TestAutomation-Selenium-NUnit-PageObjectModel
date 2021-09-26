@@ -15,12 +15,12 @@ namespace SwissHerbalTests.PageObjects.OrderPage
         }
 
         public IWebElement AcceptCookieButton => _driver.FindElement(By.CssSelector("a[id='cookie_action_close_header']"));
-        public IWebElement ClickForLogInButton => _driver.FindElement(By.XPath("//a[@class='showlogin']"));
+        public IWebElement ButtonForLogin => _driver.FindElement(By.XPath("//a[@class='showlogin']"));
         public IWebElement UserLogin => _driver.FindElement(By.Id("username"));
         public IWebElement UserPassword => _driver.FindElement(By.Id("pasword"));
         public IWebElement RememberMeCheckbox => _driver.FindElement(By.Id("rememberme"));
         public IWebElement LogInButton => _driver.FindElement(By.Name("login"));
-        public IWebElement ClickForAddCouponButton => _driver.FindElement(By.XPath("//a[@class='showcoupon']"));
+        public IWebElement AddCouponButton => _driver.FindElement(By.XPath("//a[@class='showcoupon']"));
         public IWebElement CouponCodeTextbox => _driver.FindElement(By.Id("coupon_code"));
         public IWebElement RealiseCouponButton => _driver.FindElement(By.XPath("//button[@name='apply_coupon']"));
         public IWebElement BillingFirstName => _driver.FindElement(By.Id("billing_first_name"));

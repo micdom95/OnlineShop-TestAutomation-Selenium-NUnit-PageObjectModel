@@ -29,7 +29,7 @@ namespace SwissHerbalTests.PageObjects.ShoppingBasket
             EmptyBasketLabel.Text.Should().Be("Twój koszyk jest pusty.");
         }
 
-        public void BackwardToShopButtonClick()
+        public void ClickBackwardToShopButton()
         {
             BackwardToShopButton.Displayed.Should().BeTrue();
             BackwardToShopButton.Click();
@@ -71,7 +71,7 @@ namespace SwissHerbalTests.PageObjects.ShoppingBasket
             CouponCodeTextbox.SendKeys(couponCode);
         }
 
-        public void RealiseCouponButtonClick()
+        public void ClickRealiseCouponButton()
         {
             RealiseCouponButton.Displayed.Should().BeTrue();
             RealiseCouponButton.Click();
@@ -90,7 +90,6 @@ namespace SwissHerbalTests.PageObjects.ShoppingBasket
                 product.FindElement(By.XPath("//a[@class='remove']")).Click();
                 CheckDeletedProductLabel();
             }
-            
         }
     }
 }
