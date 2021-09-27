@@ -2,6 +2,7 @@
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
+using SwissHerbalTests.Common.Dictionaries;
 using SwissHerbalTests.Common.Enums;
 using SwissHerbalTests.Common.Extensions;
 using System;
@@ -65,25 +66,16 @@ namespace SwissHerbalTests.PageObjects.MainPage
             BasketItemCounter.Text.Should().Be(counter);
         }
 
-        public void SuplementsTabHover(SuplementsTabs suplementsTab)
+        public void SelectSuplementsTabHover(SuplementsTabs suplementsTab)
         {
             Actions actions = new Actions(_driver);
             actions.MoveToElement(SuplementsTab).Perform();
-            //actions.MoveToElement((IWebElement)SuplementsTabSubMenu.Select(tab => tab.Text.Contains(suplementsTab.ToString())));
-            SelectElement dropdown = new SelectElement(SuplementsTab);
-            dropdown.SelectByText(suplementsTab.ToString());
-            actions.Click().Build().Perform();
+            //actions.MoveToElement((IWebElement)SuplementsTabSubMenu.Select(tab => tab.Text.Contains(suplementsTab.ToString().FirstOrDefault())));
+            //SelectElement dropdown = new SelectElement(SuplementsTab);
+            //dropdown.SelectByText(suplementsTab.ToString());
+            //actions.Click().Build().Perform();
             
-            string url;
-            
-            if (suplementsTab == SuplementsTabs.KONCENTRACJA)
-                url = ("https://pl.swissherbal.eu/kategoria-produktu/nauka/");
-            else if (suplementsTab == SuplementsTabs.DETOKS || suplementsTab == SuplementsTabs.ODPORNOŚĆ)
-                url = ($"https://pl.swissherbal.eu/kategoria-produktu/suplementy/{suplementsTab.ToString().ToLower().Replace('ś','s').Replace('ć','c')}");
-            else if (suplementsTab == SuplementsTabs.WITALNOŚĆ)
-                url = ("https://pl.swissherbal.eu/kategoria-produktu/zdrowie/");
-            else
-                url = ($"https://pl.swissherbal.eu/kategoria-produktu/{suplementsTab.ToString().ToLower()}/");
+            string url = SuplementsTabDictionary.suplementsTabsUrls[suplementsTab];
             
             _driver.Url.Should().Be(url);
         }
@@ -143,6 +135,18 @@ namespace SwissHerbalTests.PageObjects.MainPage
         public void SelectInStockProduct()
         {
             ProductsTable.Select(p => p.FindElement(By.XPath("//span[@class='in-stock']"))).FirstOrDefault();
+        }
+
+        public void SelectInStockProductFromCollection()
+        {
+            CollectionInStockProducts.FirstOrDefault().FindElement(By.CssSelector("[class='product-overlay__cart add_to_cart_button product_type_variable']")).Click();
+        }
+
+        public void SelectOutOfStockProductFromCollection()
+        {
+            var singleProduct = CollectionOutOfStockProducts.FirstOrDefault();
+            WaitForAction.WaitUntilElementVisible(_driver, (By.CssSelector("[class='product-overlay__cart add_to_cart_button product_type_variable']")));
+            singleProduct.FindElement((By.CssSelector("[class='product-overlay__cart add_to_cart_button product_type_variable']")));
         }
     }
 }

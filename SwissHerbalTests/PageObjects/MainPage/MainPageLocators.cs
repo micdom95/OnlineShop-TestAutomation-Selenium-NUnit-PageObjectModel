@@ -26,6 +26,8 @@ namespace SwissHerbalTests.PageObjects.MainPage
         public IWebElement SearchEngineButton => _driver.FindElement(By.XPath("//span[@class='glyphicon  glyphicon-search']"));
         public IWebElement SearchResultLabel => _driver.FindElement(By.XPath("//span[@class='banners-text']"));
         public IList<IWebElement> ProductsTable => _driver.FindElement(By.XPath("//div[@class='products__single']/figure/a")).FindElements(By.XPath("//div[@class='product-overlay__stock']"));
+        public IList<IWebElement> CollectionOutOfStockProducts => _driver.FindElements(By.XPath("//span[contains(text(), 'Chwilowo brak')]"));
+        public IList<IWebElement> CollectionInStockProducts => _driver.FindElements(By.XPath("//span[contains(text(), 'Na stanie')]"));
         public IWebElement AddProductButton => _driver.FindElement(By.CssSelector("[class='product-overlay__cart add_to_cart_button product_type_variable']"));
         public IWebElement AcceptCookieButton => _driver.FindElement(By.CssSelector("a[id='cookie_action_close_header']"));
         public IWebElement BasketItemCounter => _driver.FindElement(By.XPath("//span[@class='header-cart__items-num']"));

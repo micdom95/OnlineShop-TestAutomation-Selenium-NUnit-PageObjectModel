@@ -8,7 +8,7 @@ namespace SwissHerbalTests.Common.Enums
     {
         ENERGIA,
         KONCENTRACJA,
-        PAMIĘC,
+        PAMIĘĆ,
         NASTRÓJ,
         RELAKS,
         SEN,

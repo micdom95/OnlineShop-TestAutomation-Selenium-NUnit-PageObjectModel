@@ -114,6 +114,17 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
 
         [Test]
         [TestCase(SuplementsTabs.ENERGIA)]
+        [TestCase(SuplementsTabs.KONCENTRACJA)]
+        [TestCase(SuplementsTabs.PAMIĘĆ)]
+        [TestCase(SuplementsTabs.NASTRÓJ)]
+        [TestCase(SuplementsTabs.RELAKS)]
+        [TestCase(SuplementsTabs.SEN)]
+        [TestCase(SuplementsTabs.SIŁA)]
+        [TestCase(SuplementsTabs.LIBIDO)]
+        [TestCase(SuplementsTabs.DIETA)]
+        [TestCase(SuplementsTabs.DETOKS)]
+        [TestCase(SuplementsTabs.ODPORNOŚĆ)]
+        [TestCase(SuplementsTabs.WITALNOŚĆ)]
         public void SuplementsTab_ClickEnergyTab_TabOpenedProperly(SuplementsTabs suplementsTab)
         {
             using (IWebDriver _driver = TestSetup.ReturnDriver(DriverType.Chrome))
@@ -121,7 +132,7 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 mainPageActions.OpenMainPage();
                 mainPageActions.ClickAcceptCookieButton();
-                mainPageActions.SuplementsTabHover(suplementsTab);
+                mainPageActions.SelectSuplementsTabHover(suplementsTab);
             }
         }
 
@@ -207,8 +218,7 @@ namespace SwissHerbalTests.TestSuites.MainPageTests
                 MainPageActions mainPageActions = new MainPageActions(_driver);
                 mainPageActions.OpenMainPage();
                 mainPageActions.ClickAcceptCookieButton();
-                mainPageActions.SelectOutOfStockProduct();
-                mainPageActions.ClickAddProductButton();
+                mainPageActions.SelectOutOfStockProductFromCollection();
             }
         }
     }
